@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { }from 'react';
+
+
+
 
 const Cart = (props) => {
-    console.log(props);
     const cart =props.cart;
+    //const user = useContext(UserContext);
     //const total = cart.reduce((total ,prd) => total + prd.price ,0); this is standard way to add total..
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         const product = cart[i];
-        total = total + product.price
+        total = total + product.price *product.quantity
     }
     let shipping = 0;
     if(total>35){
@@ -32,8 +35,10 @@ const Cart = (props) => {
             <p>Product:{formatNumber(total)}</p>
             <p>Shipping :{shipping}</p>
             <p>Tax:{tax}</p>
-            <p>Total: {grandTotal}
-            </p>
+            <p>Total: {grandTotal} </p>
+            <br/>
+            {props.children}
+            <p> {}</p>
         </div>
     );
 };
