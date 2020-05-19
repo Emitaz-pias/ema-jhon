@@ -17,7 +17,11 @@ const Header = () => {
 
                 {
                    auth.user &&
+<<<<<<< HEAD
                    <span style={{color:"cyan"}}>Welcome { auth.user.name}</span>            
+=======
+                   <span style={{color:"cyan"}}>{ auth.user.name}</span>            
+>>>>>>> c22591d1a09d951eb600fca80b75f20703f72c79
                 }
                 {
                     auth.user ?

@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 const Inventory = () => {
 
     const handleInventory = () => {
@@ -21,6 +22,13 @@ const Inventory = () => {
         <div>
             <h1>Developer is sleeping</h1>
             <button onClick={handleInventory} >Add Inventory</button>
+=======
+
+const Inventory = () => {
+    return (
+        <div>
+            <h1>Developer is sleeping</h1>
+>>>>>>> c22591d1a09d951eb600fca80b75f20703f72c79
         </div>
     );
 };

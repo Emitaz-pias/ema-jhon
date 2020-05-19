@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react'
+<<<<<<< HEAD
+=======
+import fakedata from '../../fakeData';
+>>>>>>> c22591d1a09d951eb600fca80b75f20703f72c79
 import { useState } from 'react';   
 import  './Shop.css'
 import Products from '../Products/Products';
 import Cart from '../Cart/Cart';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
+<<<<<<< HEAD
+=======
+import fakeData from '../../fakeData';
+>>>>>>> c22591d1a09d951eb600fca80b75f20703f72c79
 import { Link } from 'react-router-dom';
 
 const Shop = () => {
@@ -11,6 +19,7 @@ const Shop = () => {
   const [products ,setProducts] = useState ([]);
   const [cart,setCart] = useState([]);
 
+<<<<<<< HEAD
 useEffect(()=>{
     fetch('http://localhost:4200/Products')
     .then(res => res.json())
@@ -31,6 +40,18 @@ useEffect(()=>{
       }
      
   },[products]) 
+=======
+  useEffect(()=>{
+      const savedCart =getDatabaseCart();
+      const productKeys =Object.keys(savedCart);
+      const previousCart =productKeys.map(existingKey=>{
+          const product =fakeData.find(pd=>pd.key ===existingKey);
+          product.quantity = savedCart[existingKey];
+          return product
+      })
+      setCart(previousCart);
+  },[]) 
+>>>>>>> c22591d1a09d951eb600fca80b75f20703f72c79
 
   const  handleAddProduct = (product) =>{
       const toBeAddedKey =product.key
